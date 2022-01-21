@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} | {{ config["website"]["name"] }}</title>
+  {% block styles %}
+	<link rel="stylesheet" type="text/css" href="/static/assets/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/startbootstrap-blog/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/icomoon/style.css">
+  {% endblock %}
+  {% block extra_styles %}{% endblock %}
+</head>
+
+<body>
+	<div id="app">
+    {% block navbar %}
+    {% include "themes/startbootstrap-blog/navbar.html" %}
+    {% endblock %}
+    {% block page_content %}
+    <page-content>
+      <page-body>
+        <post-tab post_title="Blog Kickoff" post_date="June 5, 2021" post_url="<?php echo get_project_url('/posts/1/kickoff.php'); ?>"></post-tab>
+        <post-tab post_title="Premiering: The Black Clover Movie Trailer" post_date="June 5, 2021" post_url="<?php echo get_project_url('/posts/2/black-clover-movie-trailer.php'); ?>"></post-tab>
+      </page-body>
+      <side-bar>
+        <search-widget></search-widget>
+        <categories-widget>
+          <div class="col-sm-6">
+            <ul class="list-unstyled mb-0">
+              <li><a href="#!">Tech</a></li>
+              <li><a href="#!">Progranmming</a></li>
+              <li><a href="#!">Ethical Hacking</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <ul class="list-unstyled mb-0">
+              <li><a href="#!">Machine Learning</a></li>
+              <li><a href="#!">Interview Questions</a></li>
+              <li><a href="#!">Graph Algorithms</a></li>
+            </ul>
+          </div>
+        </categories-widget>
+      </side-bar>
+    </page-content>
+    {% endblock %}
+    {% block footer %}
+    <page-footer>
+      <copyright company-name="{{ config["website"]["name"] }}"></copyright>
+    </page-footer>
+    {% endblock %}
+    {% block scripts %}
+    <script type="text/javascript" src="/static/assets/vue/vue.js"></script>
+    <script type="text/javascript" src="/static/assets/startbootstrap-blog/js/templates.js"></script>
+    {% endblock %}
+    {% block extra_scripts %}
+    <script type="text/javascript">
+    new Vue({
+      el: "#app"
+    });
+    </script>
+    {% endblock %}
+  </div>
+</body>
+
+</html>

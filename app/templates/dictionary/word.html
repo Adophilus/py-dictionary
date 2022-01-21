@@ -1,0 +1,23 @@
+{% extends "theme-1/base.html" %}
+{% block body_container %}
+<div class="jumbotron">
+	<header class="display-4 word-name">
+		{{ word }}
+	</header>
+	<div class="word-definitions">
+	{% for definition in definitions %}
+		<div class="word-definition">
+			<p class="lead definition-sound">
+				{{ definition.SOUND }}
+			</p>
+			<p class="lead definition-part-of-speech">
+				{{ definition.PART_OF_SPEECH }}
+			</p>
+			<p class="lead definition-def">
+				{{ definition.DEFINITION }}
+			</p>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}

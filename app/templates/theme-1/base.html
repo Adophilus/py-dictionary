@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% block head %}
+	<title>{% block inner_title %}{% endblock %}</title>
+	{% block styles %}
+	<link rel="stylesheet" type="text/css" href="/static/CSS/Bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/CSS/flaticon/flaticon.css">
+	<link rel="stylesheet" type="text/css" href="/static/CSS/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/CSS/theme-1/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/CSS/theme-1/main.css">
+	{% endblock %}
+	{% block extra_styles %}{% endblock %}
+	{% endblock %}
+</head>
+
+<body>
+	{% block navbar %}
+	{% include "theme-1/navbar.html" %}
+	{% endblock %}
+	{% block body %}
+	<div class="container">
+		{% block body_container %}{% endblock %}
+	</div>
+	{% endblock %}
+	{% block scripts %}
+	<script type="text/javascript" src="/static/JavaScript/JQuery/jquery.js"></script>
+	<script type="text/javascript" src="/static/JavaScript/Bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/JavaScript/main.js"></script>
+	{% endblock %}
+	{% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

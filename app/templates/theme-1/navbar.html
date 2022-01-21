@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+	<a class="navbar-brand" href="/">
+		{% block navbar_icon %}{{ config.application.icons[0] | safe }}{% endblock %}
+		{% block navbar_title %}{{ config.application.name }}{% endblock %}
+	</a>
+
+	<div class="wrap-input30 validate-input" data-validate="Enter search query">
+		<span id="search_btn" class="btn-details-right">
+			<i class="zmdi zmdi-chevron-right"></i>
+		</span>
+		<input class="input100" id="search_entry" type="text" name="search">
+		<span class="focus-input100" data-placeholder="Search"></span>
+	</div>
+
+	<button class="navbar-toggler btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('dictionary.renderHomeView') }}">
+					Dictionary
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('thesaurus.renderHomeView') }}">
+					Thesaurus
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>

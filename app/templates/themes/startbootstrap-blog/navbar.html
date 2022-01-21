@@ -1,0 +1,4 @@
+<nav-bar title="{{ config["website"]["name"] }}" url="{{ url_for('core.home_view') }}">
+  <nav-bar-tab value="Dictionary" current="true" url="{{ url_for('dictionary.home_view') }}"></nav-bar-tab>
+  <nav-bar-tab value="Thesaurus" url="{{ url_for('thesaurus.home_view') }}"></nav-bar-tab>
+</nav-bar>

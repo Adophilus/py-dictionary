@@ -1,0 +1,12 @@
+{% extends "theme-1/base.html" %}
+{% block body_container %}
+<div class="jumbotron">
+	{% for word in words %}
+	<header>
+		<a class="display-4 word-name" href="{{ url_for('dictionary.renderWordView', word_id = word.ID) }}">
+			{{ word }}
+		</a>
+	</header>
+	{% endfor %}
+</div>
+{% endblock %}
