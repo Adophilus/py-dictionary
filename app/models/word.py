@@ -1,6 +1,8 @@
 from flask import globals
 
 from app import db
+from app.controllers.methods import unjsonize
+from app.models.definition import Definition
 
 class Word (db.Model):
 	ID = db.Column(db.String(50), primary_key = True)
@@ -12,8 +14,8 @@ class Word (db.Model):
 
 	def getDefinitions (self):
 		definitions = []
-		for definition_id in globals.controller.methods.unjsonize(self.DEFINITIONS):
-			definition = globals.model.Definition.query.filter_by(ID = definition_id).first()
+		for definition_id in unjsonize(self.DEFINITIONS):
+			definition = Definition.query.filter_by(ID = definition_id).first()
 			if (definition):
 				definitions.append(definition)
 		return definitions

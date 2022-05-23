@@ -1,8 +1,13 @@
-SECRET_KEY = "Pw46ZP4rjiWMaMbpeMzGFjL_hlMzBjkPV5zA5ImaNlU="
-SQLALCHEMY_DATABASE_URI = "sqlite:///db.sqlite3"
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+SQLALCHEMY_DATABASE_URI = "sqlite:///../db.sqlite3"
 
 class application ():
-    name = "Dictionary"
+    name = "Py-Dictionary"
 
 class server ():
     hostname = "localhost"
